@@ -1,0 +1,86 @@
+﻿@model testt_6.Models.Item
+
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<style>
+
+    .navbar {
+        overflow: hidden;
+        background-color: #1d59ba;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    form {
+        margin: 0px 50px 75px 100px;
+    }
+
+    h2 {
+        margin: 120px 50px 50px 100px;
+    }
+</style>
+<html>
+<head>
+    <title>Smart Plan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg navbar navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><font color="#73c2fb">Smart</font><font color="#EE82EE">Plan</font></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="~/Views/_ViewStart.cshtml"><font color="#FFFFFF">Начало</font></a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Регистрация</h2>
+    </div>
+    <div class="container">
+        @using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+        {<form action="/action_page.php">
+                <div class="form-group">
+                    <label for="email">Имейл адрес</label>
+                    <input type="email" class="form-control" id="email" placeholder="Въведи имейл" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Парола</label>
+                    <input type="password" class="form-control" id="pwd1" placeholder="Въведи парола" name="pwd1">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Повтори парола</label>
+                    <input type="password" class="form-control" id="pwd2" placeholder="Повтори парола" name="pwd2">
+                    @if (Model.id != 0)
+                    {<label for="pwd2">Не правилно повторена парола</label>}
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="remember">Запомни ме</label>
+                </div>
+                <input type="submit" class="btn btn-default" value="Продължи" />
+            </form>
+        }
+    </div>
+
+
+
+
+
+</body>
+</html>

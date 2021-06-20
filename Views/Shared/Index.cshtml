@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--indexpage-->
+<html lang="bg">
+<head>
+    <title>SmartPlan</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width =device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+
+
+        .index-img {
+            width: 1150px;
+            height: 600px;
+            margin-top:90px;
+            margin: 75px 50px;
+            text-align: center;
+        }
+        <!-- Създаваме си фуутъра-- >
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+            background-color: rgba(29, 89, 186, 1.00);
+        }
+        
+        .navbar {
+            overflow: hidden;
+            background-color: #1d59ba;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border-radius: 0px;
+            
+        }
+
+
+        @@media screen and (min-width: 400px) {
+            .index-img {
+                width: 100%;
+                height: auto;
+                text-align: left;
+            }
+        }
+
+        @@media screen and (min-width:900px) {
+            .index-img {
+                width: 40%;
+                height: auto;
+                margin-left: -210px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><font color="#73c2fb">Smart</font><font color="#EE82EE">Plan</font></a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="@Url.Action("Log","User")"><span class="glyphicon glyphicon-log-in"></span><font color="FFFFFF"> Влез</font> </a></li>
+                <li><a href="@Url.Action("Sign","User")"><span class="glyphicon glyphicon-user"></span><font color="FFFFFF"> Регистрация </font></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+            </div>
+
+            <div class="img">
+                <img class="img-responsive" style="width:100%;height:500px" src="@Url.Content("~/Assets/images.jpg")">
+
+            </div>
+
+            <div class="footer">
+                <a href="#"><br><font color="#1d59ba"> </font></a>
+                <a href="#"><font color="white">Copyright © SmartPlan. Всички права запазени.</font> </a><br />
+            </div>
+
+
+            <div class="row">
+                <a href="#">
+                    <div class="col-sm-4"><img src="@Url.Content("~/Assets/goals.png")" style="width:150px;height:150px;" runat="server"><p>Помощ</p></div>
+                </a>
+                <a href="@Url.Action("Contact","Home")">
+                    <div class="col-sm-4"><img src="@Url.Content("~/Assets/contact.png")" style="width:150px;height:150px;"><p>Контакти</p></div>
+                </a>
+                <a href="@Url.Action("About","Home")">
+                    <div class="col-sm-4"><img src="@Url.Content("~/Assets/about.png")" style="width: 150px; height: 150px;"><p>За Нас</p></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<!DOCTYPE html>
+<html>
+<!-- contact -->
+<head>
+    <title>SmartPlan</title>
+    <meta charset="utf-8">
+    <meta name=”viewport” content="width =device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #1d59ba;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 8%;
+            color: white;
+            text-align: center;
+            background-color: #1d59ba;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg navbar navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><font color="#73c2fb">Smart</font><font color="#EE82EE">Plan</font></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="SecondScreen.html"><font color="#FFFFFF">Начало</font></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-grey">
+        <h1 class="text-center">За контакти</h1>
+        <div class="row">
+            <div class="col-sm-11">
+                <p>При възникнал проблем ни пишете и ние ще Ви върнем отговор в следващите 24 часа.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Дупница, България</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +359 877 060 696</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> smartplan@gmail.com</p>
+            </div>
+            <div class="col-sm-11">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Вашето име" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Вашият имейл" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Комeнтар" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="Прати">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="#"><br><font color="#1d59ba"> </a></font>
+        <a href="#"><font color="white">Copyright © SmartPlan. Всички права запазени. </a></font></br>
+    </div>
+
+</body>
+</html>

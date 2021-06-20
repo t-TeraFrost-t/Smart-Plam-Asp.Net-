@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Help";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartPlan</title>
+    <meta charset="utf-8">
+    <meta name=”viewport” content=”width =device-width, initial-scale=1″>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/help.css">
+
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: #1d59ba;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5%;
+            color: white;
+            text-align: center;
+            background-color: #1d59ba;
+        }
+
+        .header {
+            padding: 40px;
+            text-align: center;
+            background: #1abc9c;
+            color: black;
+            font-size: 20px;
+            background-color: #5ea3ed;
+        }
+
+        .container {
+            padding: 15px;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="footer">
+
+        <font color="white">Copyright © SmartPlan. Всички права запазени.</font>
+    </div>
+
+
+    <nav class="navbar navbar-expand-sm bg navbar navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><font color="#73c2fb">Smart</font><font color="#EE82EE">Plan</font></a>
+            </div>
+        </div>
+    </nav>
+    <div class="header">
+        <h2>Помощен екран</h2>
+        <p>Тук на тази страница ще намерите начини за създаване на задача/бележка:</p>
+    </div>
+
+    <div class="container">
+            <p>Първо, трябва да сте си направили профил в нашия уебсайт</p>
+            <p>Отивате на екрана отдолу</p>
+            <img src="@Url.Content("~/Assets/picture.png")" style="width: 85%;">
+            <p>Избирате един от бутоните: Нова задача или нова бележка, за да създадете задача/бележка.</p>
+            <img src="" style="width:85%;">
+            <img src="@Url.Content("~/Assets/image.png")"  style="width: 85%;">
+            <p>След като отидете на този екран трябва да сложите тема и да запишете своята задача/бележка. </p>
+            <img src="@Url.Content("~/Assets/note.png")" style="width:85%;">
+        <div class="container-fluid">
+                <p>Ако имате въпроси, на които не е отговорено в помощния сектор натиснете бутона отдолу</p>
+        </div>
+        </div>
+        <input type="submit" href="@Url.Action("Contact","Help")">
+
+</body>
+</html>
+

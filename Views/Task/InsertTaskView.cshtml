@@ -1,0 +1,292 @@
+﻿<style>
+
+    .navbar {
+        overflow: hidden;
+        background-color: #1d59ba;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .main {
+        margin-left: 17%;
+        font-size: 16px;
+        padding: 0px 0px;
+        margin-top: 3%;
+        margin-right-side: 20%;
+    }
+
+    @@media only screen and (max-width:800px) {
+        /* For tablets: */
+        .main {
+            width: 80%;
+            padding: 0;
+        }
+
+        .right {
+            width: 100%;
+        }
+    }
+
+    @@media only screen and (max-width:500px) {
+        /* For mobile phones: */
+        .menu, .main, .right {
+            width: 100%;
+        }
+    }
+    /* Use a media query to add a breakpoint at 800px: */
+    @@media screen and (max-width: 800px) {
+        .left, .main, .right {
+            width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        }
+    }
+
+    #grad1 {
+        height: 600px;
+        background-color: #cccccc;
+        background-image: linear-gradient(skyblue,lightblue, white);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+    .month {
+        padding: 50px 15px;
+        width: 50%;
+        background: #1abc9c;
+        text-align: center;
+    }
+
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+
+            .month ul li {
+                color: white;
+                font-size: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0px;
+            }
+
+        .month .prev {
+            float: left;
+            padding-top: 5px;
+        }
+
+        .month .next {
+            float: right;
+            padding-top: 5px;
+        }
+
+    .weekdays {
+        margin: 0;
+        padding: 5px 0;
+        background-color: #ddd;
+    }
+
+        .weekdays li {
+            display: inline-block;
+            width: 13.6%;
+            color: #666;
+            text-align: center;
+        }
+
+    .days {
+        padding: 0px 0;
+        background: #eee;
+        margin: 0;
+    }
+
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 13.6%;
+            text-align: center;
+            margin-bottom: 0px;
+            font-size: 12px;
+            color: #777;
+        }
+
+            .days li .active {
+                padding: 0px;
+                background: #1abc9c;
+                color: white !important
+            }
+
+    /* Add media queries for smaller screens */
+    @@media screen and (max-width:720px) {
+        .weekdays li, .days li {
+            width: 13.1%;
+        }
+    }
+
+    @@media screen and (max-width: 420px) {
+        .weekdays li, .days li {
+            width: 12.5%;
+        }
+
+            .days li .active {
+                padding: 2px;
+            }
+    }
+
+    @@media screen and (max-width: 290px) {
+        .weekdays li, .days li {
+            width: 12.2%;
+        }
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 0px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 11.5%;
+        margin-bottom: 100px;
+        resize: vertical;
+    }
+
+        input[type=text].lala {
+            float: left;
+            width: 40%;
+            margin-left: 2px;
+        }
+
+
+</style>
+
+<html>
+<head>
+    <title>SmartPlan</title>
+    <meta charset="utf-8">
+    <meta name=”viewport” content="width =device-width, initial-scale=1">
+    <link rel="stylesheet" href="@Url.Content("~/Assets/NewTask.css")">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body style="background-color:powderblue;">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><font color="#73c2fb">Smart</font><font color="#EE82EE">Plan</font></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="SecondScreen.html"><font color="#FFFFFF">Начало</font></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @using (Html.BeginForm("Insert", "Task", FormMethod.Post))
+        {
+            <form action="/action_page.php">
+                <h4 style="margin-top:80px;"><b>Тема</b></h4>
+                <input type="text" id="nam" name="nam" placeholder=" " style="margin-top:0px;">
+                <h4 style="margin-top:0px;"><b>Задача</b></h4>
+                <textarea id="text" name="text" placeholder="Запиши своите задачи..." style="margin-top:0px;"></textarea>
+                <input type="text" id="StartDate" name="StartDate"class="lala">
+                <input type="text" id="EndDate" name="EndDate" class="lala">
+                <select id="SelectImp" name="SelectImp">
+                    <option disabled selected value="">Importance  </option>
+                    <option value="1">Not Important</option>
+                    <option value="2">Important</option>
+                    <option value="3">Very Important</option>
+                </select>
+                <input type="hidden" id="Importance" name="Importance">
+                <input type="submit" value="Запази" style="margin-top:50px;">
+            </form>
+        }
+    </div>
+    <script>
+        $("#SelectImp").change(function () {
+            var inp = $(this).val();
+            $("#Importance").val(inp);
+        })
+    </script>
+
+    <div >
+       
+    </div>
+    <script>
+
+        $(
+            function () {
+                
+                $('#EndDate').datepicker({ dateFormat: "dd-mm-yy", changeYear: true });
+            }
+        )
+    </script>
+    <script>
+        $(
+            function () {
+              
+                $('#StartDate').datepicker({ dateFormat: "dd-mm-yy", changeYear: true });
+            }
+        )
+    </script>
+    
+    <hr>
+    <hr>
+    <script>
+        $(function () {
+            $('#datetimepicker6').datetimepicker();
+            $('#datetimepicker7').datetimepicker({
+                useCurrent: false //Important! See issue #1075
+            });
+            $("#datetimepicker6").on("dp.change", function (e) {
+                $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepicker7").on("dp.change", function (e) {
+                $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+    </script>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+    <div class="footer">
+        <font color="#1d59ba"> <a href="#"><br> </a></font>
+        <font color="white"><a href="#">Copyright © SmartPlan. Всички права запазени. </a><br /></font>
+    </div>
+
+</body>
+</html>
+
